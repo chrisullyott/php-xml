@@ -2,6 +2,23 @@
 
 /**
  * Test for XmlParser
+ *
+ * @todo Need a better way of getting all the "item" elements. #getItemsByTagName
+ * needs to check the name of the tag every time and this isn't a great way to
+ * handle the recursion.
+ *
+ * @todo Tag is "complete" but has no value, an empty key should not
+ * make it into the resulting array... only its child values
+ *
+ * @todo #buildAttributeValues should work in the same way for child tags as well,
+ * for example:
+ * <author><name>John</name></author> = "author_name"
+ * <author name="John"/> = "author_name"
+ *
+ * @todo Join multiple tags into one. Currently only the last one will be seen:
+ * <category>One</category>
+ * <category>Two</category>
+ * <category>three</category>
  */
 
 use PHPUnit\Framework\TestCase;

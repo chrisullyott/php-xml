@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator>
+    <link href="https://blog.github.com/feed.xml" rel="self" type="application/atom+xml" />
+    <link href="https://blog.github.com/" rel="alternate" type="text/html" />
+    <updated>2018-03-23T20:23:37+00:00</updated>
+    <id>https://blog.github.com/</id>
+    <title type="html">The GitHub Blog</title>
+    <subtitle>Updates, ideas, and inspiration from GitHub to help developers build and design software.</subtitle>
+    <author>
+        <name>GitHub</name>
+        <email>support@github.com</email>
+    </author>
+    <entry>
+        <title type="html">GitHub for Unity Package Beta Release</title>
+        <link href="https://blog.github.com/2018-03-23-GitHub-for-Unity-Beta/" rel="alternate" type="text/html" title="GitHub for Unity Package Beta Release" />
+        <published>2018-03-23T00:00:00+00:00</published>
+        <updated>2018-03-23T00:00:00+00:00</updated>
+        <id>https://blog.github.com/GitHub-for-Unity-Beta</id>
+        <content type="html" xml:base="https://blog.github.com/2018-03-23-GitHub-for-Unity-Beta/">&lt;p&gt;&lt;img src="https://user-images.githubusercontent.com/7321362/37850052-1cf8ecf8-2e97-11e8-9252-6870191234d6.png" alt="GitHub for Unity Beta now available" /&gt;&lt;/p&gt;&lt;p&gt;Sadly, &lt;a href="http://www.gdconf.com/"&gt;GDC 2018&lt;/a&gt; is coming to a close...&lt;/p&gt;</content>
+        <author>
+            <name>sguthals</name>
+        </author>
+        <summary type="html" />
+        <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://user-images.githubusercontent.com/7321362/37850052-1cf8ecf8-2e97-11e8-9252-6870191234d6.png" />
+    </entry>
+</feed>

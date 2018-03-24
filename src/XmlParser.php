@@ -228,10 +228,14 @@ class XmlParser
             $index = count($elements);
 
             if ($node['type'] === 'open' || $node['type'] === 'complete') {
+                $tag = isset($node['tag']) ? $node['tag'] : null;
+                $value = isset($node['value']) ? $node['value'] : null;
+                $attributes = isset($node['attributes']) ? $node['attributes'] : null;
+
                 $elements[$index] = [
-                    'tag' => $node['tag'],
-                    'value' => $node['value'],
-                    'attributes' => $node['attributes']
+                    'tag' => $tag,
+                    'value' => $value,
+                    'attributes' => $attributes
                 ];
 
                 if ($node['type'] === 'open') {

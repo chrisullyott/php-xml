@@ -4,7 +4,7 @@ XML-to-array conversion in PHP.
 
 ### Installation
 
-With Composer:
+With [Composer](https://getcomposer.org/):
 
 ```
 $ composer require chrisullyott/php-xml

@@ -1,0 +1,27 @@
+
+{
+    "name": "chrisullyott/php-xml",
+    "type": "library",
+    "description": "XML-to-array conversion in PHP.",
+    "homepage": "https://github.com/chrisullyott/php-xml",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chris Ullyott",
+            "email": "contact@chrisullyott.com",
+            "homepage": "http://www.chrisullyott.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/chrisullyott/php-xml/issues",
+        "source": "https://github.com/chrisullyott/php-xml"
+    },
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    }
+}

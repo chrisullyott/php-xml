@@ -13,7 +13,9 @@ $ composer require chrisullyott/php-xml
 ### Usage
 
 ```php
-$parser = new XmlParser('/path/to/feed.xml');
+use ChrisUllyott\XmlParser;
+
+$parser = new XmlParser('/path/to/feed.xml'); // or pass in a raw XML string
 
 $items = $parser->getItems();
 

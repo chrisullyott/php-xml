@@ -6,7 +6,7 @@ XML-to-array conversion in PHP.
 
 With [Composer](https://getcomposer.org/):
 
-```php
+```bash
 $ composer require chrisullyott/php-xml
 ```
 

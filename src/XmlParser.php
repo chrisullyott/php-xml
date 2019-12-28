@@ -226,8 +226,8 @@ class XmlParser
             if ($node['type'] === 'open' || $node['type'] === 'complete') {
                 $elements[$index] = array(
                     'tag' => $node['tag'],
-                    'value' => $node['value'],
-                    'attributes' => $node['attributes']
+                    'value' => isset($node['value']) ? $node['value'] : null,
+                    'attributes' => isset($node['attributes']) ? $node['attributes'] : null
                 );
 
                 if ($node['type'] === 'open') {

@@ -1,6 +1,6 @@
 # php-xml
 
-XML-to-array conversion in PHP.
+XML-to-array conversion in PHP. Built for pulling items from a variety of RSS feeds.
 
 ### Installation
 

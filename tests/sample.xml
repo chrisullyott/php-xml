@@ -6,12 +6,15 @@
     <description>My example channel</description>
     <item>
        <title>News for September the Second</title>
-       <link>http://example.com/2002/09/01</link>
-       <description>other things happened today</description>
+       <link>http://example.com/2002/09/01/news-for-september-the-second</link>
+       <guid isPermaLink="false">20020901-news-for-september-the-second</guid>
+       <description>Things happened today!</description>
     </item>
     <item>
        <title>News for September the First</title>
-       <link>http://example.com/2002/09/02</link>
+       <link>http://example.com/2002/09/01/news-for-september-the-first</link>
+       <guid isPermaLink="false">20020901-news-for-september-the-first</guid>
+       <description>Things happened today!</description>
     </item>
   </channel>
 </rss>

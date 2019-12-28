@@ -182,7 +182,7 @@ class XmlParser
      */
     public function getCommonParentTagName()
     {
-        $parentNames = array();
+        $parentNames = [];
 
         foreach ($this->getXmlStructure() as $node) {
             if ($node['type'] === 'open') {
@@ -217,21 +217,21 @@ class XmlParser
      */
     private static function xmlStructureToArray(array $xmlStructure)
     {
-        $elements = array();
-        $stack = array();
+        $elements = [];
+        $stack = [];
 
         foreach ($xmlStructure as $node) {
             $index = count($elements);
 
             if ($node['type'] === 'open' || $node['type'] === 'complete') {
-                $elements[$index] = array(
+                $elements[$index] = [
                     'tag' => $node['tag'],
                     'value' => isset($node['value']) ? $node['value'] : null,
                     'attributes' => isset($node['attributes']) ? $node['attributes'] : null
-                );
+                ];
 
                 if ($node['type'] === 'open') {
-                    $elements[$index]['children'] = array();
+                    $elements[$index]['children'] = [];
                     $stack[count($stack)] = &$elements;
                     $elements = &$elements[$index]['children'];
                 }
@@ -255,10 +255,10 @@ class XmlParser
      */
     private static function getItemsByTagName(array $xmlArray, $tagName)
     {
-        $items = array();
+        $items = [];
 
         if (!empty($xmlArray['children']) && $xmlArray['tag'] === $tagName) {
-            $itemValues = array();
+            $itemValues = [];
 
             foreach ($xmlArray['children'] as $i) {
                 $itemValues = array_merge($itemValues, self::buildItemValues($i));
@@ -285,7 +285,7 @@ class XmlParser
      */
     private static function buildItemValues(array $nodeArray)
     {
-        $itemValues = array();
+        $itemValues = [];
 
         $tag = $nodeArray['tag'];
         $value = $nodeArray['value'];
@@ -310,7 +310,7 @@ class XmlParser
      */
     private static function buildAttributeValues($tagName, array $attributeArray)
     {
-        $item = array();
+        $item = [];
 
         foreach ($attributeArray as $key => $value) {
             $attributeKey = "{$tagName}_{$key}";
@@ -354,7 +354,7 @@ class XmlParser
             return '';
         }
 
-        $config = array('input-xml' => true, 'output-xml' => true);
+        $config = ['input-xml' => true, 'output-xml' => true];
 
         if ($result = tidy_repair_string($xmlString, $config, 'utf8')) {
             return $result;

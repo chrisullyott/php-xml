@@ -13,11 +13,11 @@ namespace ChrisUllyott;
 class XmlParser
 {
     /**
-     * The path to an XML file.
+     * A well-formed XML string.
      *
      * @var string
      */
-    private $file;
+    private $xmlString;
 
     /**
      * The expected name of the XML item tag.
@@ -25,13 +25,6 @@ class XmlParser
      * @var string
      */
     private $itemTagName;
-
-    /**
-     * A well-formed XML string.
-     *
-     * @var string
-     */
-    private $xmlString;
 
     /**
      * The SimpleXML object.
@@ -57,23 +50,38 @@ class XmlParser
     /**
      * Constructor.
      *
-     * @param string $file        The path to an XML file
-     * @param string $itemTagName The expected name of the XML item tag
+     * @param string $fileOrString The path to an XML file, or an XML string
+     * @param string $itemTagName  The expected name of the XML item tag
      */
-    public function __construct($file, $itemTagName = null)
+    public function __construct($fileOrString, $itemTagName = null)
     {
-        $this->file = $file;
+        $this->xmlString = self::loadXml($fileOrString);
         $this->itemTagName = $itemTagName;
     }
 
     /**
-     * Get the path to an XML file.
+     * Load an XML document and return it as a sanitized XML string.
+     *
+     * @param  string $fileOrString The path to an XML file, or an XML string
+     * @return string               A clean XML string
+     */
+    private static function loadXml($fileOrString)
+    {
+        if (file_exists($fileOrString)) {
+            $fileOrString = file_get_contents($fileOrString);
+        }
+
+        return self::sanitizeXmlString($fileOrString);
+    }
+
+    /**
+     * Get the raw XML string.
      *
      * @return string
      */
-    public function getFile()
+    public function getXmlString()
     {
-        return $this->file;
+        return $this->xmlString;
     }
 
     /**
@@ -98,21 +106,6 @@ class XmlParser
         }
 
         return $this->getItemTagName();
-    }
-
-    /**
-     * Get the raw XML string.
-     *
-     * @return string
-     */
-    public function getXmlString()
-    {
-        if (is_null($this->xmlString)) {
-            $this->xmlString = file_get_contents($this->getFile());
-            $this->xmlString = self::sanitizeXmlString($this->xmlString);
-        }
-
-        return $this->xmlString;
     }
 
     /**

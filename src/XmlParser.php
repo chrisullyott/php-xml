@@ -48,6 +48,17 @@ class XmlParser
     private $xmlArray;
 
     /**
+     * The PHP Tidy configuration.
+     *
+     * @var array
+     */
+    private static $tidyConfig = [
+        'input-xml'  => true,
+        'output-xml' => true,
+        'wrap'       => false
+    ];
+
+    /**
      * Constructor.
      *
      * @param string $fileOrString The path to an XML file, or an XML string
@@ -356,7 +367,7 @@ class XmlParser
 
         $config = ['input-xml' => true, 'output-xml' => true];
 
-        if ($result = tidy_repair_string($xmlString, $config, 'utf8')) {
+        if ($result = tidy_repair_string($xmlString, static::$tidyConfig, 'utf8')) {
             return $result;
         }
 

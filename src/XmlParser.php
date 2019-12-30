@@ -196,7 +196,7 @@ class XmlParser
         $parentNames = [];
 
         foreach ($this->getXmlStructure() as $node) {
-            if ($node['type'] === 'open') {
+            if ($node['type'] == 'open') {
                 $parentNames[] = $node['tag'];
             }
         }
@@ -234,21 +234,21 @@ class XmlParser
         foreach ($xmlStructure as $node) {
             $index = count($elements);
 
-            if ($node['type'] === 'open' || $node['type'] === 'complete') {
+            if ($node['type'] == 'open' || $node['type'] == 'complete') {
                 $elements[$index] = [
                     'tag' => $node['tag'],
                     'value' => isset($node['value']) ? $node['value'] : null,
                     'attributes' => isset($node['attributes']) ? $node['attributes'] : null
                 ];
 
-                if ($node['type'] === 'open') {
+                if ($node['type'] == 'open') {
                     $elements[$index]['children'] = [];
                     $stack[count($stack)] = &$elements;
                     $elements = &$elements[$index]['children'];
                 }
             }
 
-            if ($node['type'] === 'close') {
+            if ($node['type'] == 'close') {
                 $elements = &$stack[count($stack) - 1];
                 unset($stack[count($stack) - 1]);
             }
@@ -268,7 +268,7 @@ class XmlParser
     {
         $items = [];
 
-        if (!empty($xmlArray['children']) && $xmlArray['tag'] === $tagName) {
+        if (!empty($xmlArray['children']) && $xmlArray['tag'] == $tagName) {
             $itemValues = [];
 
             foreach ($xmlArray['children'] as $i) {

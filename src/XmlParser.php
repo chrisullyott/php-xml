@@ -254,7 +254,7 @@ class XmlParser
             }
         }
 
-        return $elements[0];
+        return $elements;
     }
 
     /**

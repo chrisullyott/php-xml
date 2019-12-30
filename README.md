@@ -31,7 +31,7 @@ Each feed item and their child attributes are parsed into a flat structure:
             [title] => News for September the Second
             [link] => http://example.com/2002/09/01/news-for-september-the-second
             [guid] => 20020901-news-for-september-the-second
-            [guid_isPermaLink] => false
+            [guid_isPermaLink] => 0
             [description] => Things happened today!
         )
 
@@ -40,7 +40,7 @@ Each feed item and their child attributes are parsed into a flat structure:
             [title] => News for September the First
             [link] => http://example.com/2002/09/01/news-for-september-the-first
             [guid] => 20020901-news-for-september-the-first
-            [guid_isPermaLink] => false
+            [guid_isPermaLink] => 0
             [description] => Things happened today!
         )
 

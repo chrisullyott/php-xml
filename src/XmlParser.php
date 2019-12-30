@@ -325,10 +325,25 @@ class XmlParser
 
         foreach ($attributeArray as $key => $value) {
             $attributeKey = "{$tagName}_{$key}";
-            $item[$attributeKey] = $value;
+            $item[$attributeKey] = self::parseAttributeValue($value);
         }
 
         return $item;
+    }
+
+    /**
+     * Parse an attribute value.
+     *
+     * @param  string $value An attribute value string
+     * @return mixed
+     */
+    private static function parseAttributeValue($value)
+    {
+        if (in_array(strtolower($value), ['true', 'false'])) {
+            return filter_var($value, FILTER_VALIDATE_BOOLEAN);
+        }
+
+        return $value;
     }
 
     /**
